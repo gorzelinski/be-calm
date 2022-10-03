@@ -1,11 +1,13 @@
 import "./App.css";
+import "./normalize.css";
 import "./tokens.css";
 import "@fontsource/marcellus";
 import "@fontsource/open-sans";
+import { Layout } from "./components/layout";
 
 function App() {
   return (
-    <div className="wrapper">
+    <Layout>
       <h1 className="headings heading-1">Heading 1</h1>
       <h2 className="headings heading-2">Heading 2</h2>
       <h3 className="headings heading-3">Heading 3</h3>
@@ -41,26 +43,7 @@ function App() {
         type="password"
         placeholder="Password"
       ></input>
-      <nav className="navbar margin">
-        <button className="button button-icon">
-          <ion-icon name="home" size="large"></ion-icon>
-          <p className="ui ui-text-small">Home</p>
-        </button>
-        <button className="button button-icon">
-          <ion-icon name="bookmark-outline" size="large"></ion-icon>
-          <p className="ui ui-text-small">Bookmark</p>
-        </button>
-        <button className="button button-icon">
-          <ion-icon name="refresh-outline" size="large"></ion-icon>
-          <p className="ui ui-text-small">Next quote</p>
-        </button>
-        <button className="button button-icon">
-          <ion-icon name="reader-outline" size="large"></ion-icon>
-          <p className="ui ui-text-small">My quotes</p>
-        </button>
-      </nav>
-      <div className="avatar ui-text center">M</div>
-    </div>
+    </Layout>
   );
 }
 

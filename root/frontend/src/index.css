@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .wrapper {
   padding: var(--spacing-50);
   min-height: 100vh;
@@ -22,6 +26,7 @@ code {
   font-family: var(--font-family-heading);
   font-weight: var(--font-weight-light);
   color: var(--color-primary-dark);
+  margin: 0px;
 }
 
 .heading-1 {
@@ -106,7 +111,7 @@ ion-icon {
   color: var(--color-primary-dark);
 }
 
-.navbar {
+.navigation {
   display: flex;
   justify-content: space-between;
   gap: var(--spacing-10);
