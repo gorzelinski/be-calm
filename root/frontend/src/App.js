@@ -1,3 +1,4 @@
+import { useState, createContext } from "react";
 import "./App.css";
 import "./normalize.css";
 import "./tokens.css";
@@ -8,14 +9,28 @@ import Home from "./components/home";
 import MyQuotes from "./components/my-quotes";
 import Welcome from "./components/welcome";
 
-function App() {
+export const PageContext = createContext("home");
+
+const App = () => {
+  const [authorized, setAuthorized] = useState(true);
+  const [page, setPage] = useState("home");
+
+  const selectPage = (page) => {
+    switch (page) {
+      case "home":
+        return <Home></Home>;
+      case "my-quotes":
+        return <MyQuotes></MyQuotes>;
+      default:
+        return <Home></Home>;
+    }
+  };
+
   return (
-    // <Layout>
-    //   <Home></Home>
-    //   <MyQuotes></MyQuotes>
-    // </Layout>
-    <Welcome></Welcome>
+    <PageContext.Provider value={{ page, setPage }}>
+      {authorized ? <Layout>{selectPage(page)}</Layout> : <Welcome></Welcome>}
+    </PageContext.Provider>
   );
-}
+};
 
 export default App;
