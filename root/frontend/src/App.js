@@ -5,6 +5,7 @@ import "@fontsource/marcellus";
 import "@fontsource/open-sans";
 import Layout from "./components/layout";
 import Home from "./components/home";
+import MyQuotes from "./components/my-quotes";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       {/* <h1 className="headings heading-1">Heading 1</h1>
       <h2 className="headings heading-2">Heading 2</h2>
       <h3 className="headings heading-3">Heading 3</h3> */}
-      <Home></Home>
+      {/* <Home></Home> */}
+      <MyQuotes></MyQuotes>
       {/* <p className="body paragraph-small">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
         voluptates aspernatur perferendis asperiores commodi nostrum sequi

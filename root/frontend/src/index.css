@@ -17,18 +17,22 @@ code {
 }
 
 .wrapper {
-  padding: var(--spacing-50);
-  background-color: var(--color-white);
-  min-height: 100vh;
-}
-
-.hero {
+  --wrapper-padding: var(--spacing-40);
   --padding: var(--spacing-10);
   --header-height: calc(2 * var(--padding) + var(--font-height-heading-1));
   --navbar-height: calc(
     2 * var(--padding) + var(--font-height-ui-small) + var(--spacing-40)
   );
-  min-height: calc(100vh - var(--header-height) - var(--navbar-height));
+  margin: var(--header-height) 0 var(--navbar-height) 0;
+  padding: var(--wrapper-padding);
+  background-color: var(--color-white);
+  min-height: 100vh;
+}
+
+.hero {
+  min-height: calc(
+    100vh - var(--header-height) - var(--navbar-height) - var(--wrapper-padding)
+  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,6 +68,7 @@ code {
 .paragraph {
   font-size: var(--font-size-body);
   line-height: var(--font-height-body);
+  margin: 0 0 var(--font-height-body) 0;
 }
 
 .small {
@@ -126,6 +131,7 @@ ion-icon {
 .navigation {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   gap: var(--spacing-10);
 }
 
@@ -156,8 +162,17 @@ ion-icon {
   align-items: center;
 }
 
-.margin {
+.margin-bottom {
   margin-bottom: var(--spacing-30);
+}
+
+.margin-bottom-big {
+  margin-bottom: var(--spacing-50);
+}
+
+.spacer {
+  border: var(--spacing-00) dashed var(--color-accent);
+  margin: var(--spacing-50) 0;
 }
 
 .accent {
