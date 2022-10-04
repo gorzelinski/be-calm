@@ -3,7 +3,7 @@ import "./navbar.css";
 import Navbar from "./navbar";
 import Header from "./header";
 
-export const Layout = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <div className="wrapper">
       <Header></Header>
@@ -12,3 +12,5 @@ export const Layout = ({ children }) => {
     </div>
   );
 };
+
+export default Layout;
