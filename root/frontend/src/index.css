@@ -17,25 +17,27 @@ code {
 }
 
 .wrapper {
-  --wrapper-padding: var(--spacing-40);
   --padding: var(--spacing-10);
   --header-height: calc(2 * var(--padding) + var(--font-height-heading-1));
   --navbar-height: calc(
     2 * var(--padding) + var(--font-height-ui-small) + var(--spacing-40)
   );
-  margin: var(--header-height) 0 var(--navbar-height) 0;
-  padding: var(--wrapper-padding);
+  --wrapper-padding: var(--spacing-40);
+  padding: var(--header-height) var(--wrapper-padding) var(--navbar-height);
   background-color: var(--color-white);
   min-height: 100vh;
 }
 
 .hero {
-  min-height: calc(
-    100vh - var(--header-height) - var(--navbar-height) - var(--wrapper-padding)
-  );
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  gap: var(--spacing-20);
   align-items: center;
+}
+
+.section {
+  margin: var(--spacing-40) 0;
 }
 
 .headings {

@@ -1,4 +1,5 @@
 import React from "react";
+import "./my-quotes.css";
 import Blockquote from "./blockquote";
 
 const quotes = [
@@ -21,7 +22,7 @@ const quotes = [
 
 const MyQuotes = () => {
   return (
-    <div>
+    <div className="section">
       <h2 className="headings heading-1 margin-bottom-big">My quotes</h2>
       {quotes.map((quote, index, array) => (
         <>

@@ -10,7 +10,7 @@ const quote = {
 
 const Home = () => {
   return (
-    <div className="hero">
+    <div className="hero home">
       <Blockquote
         body={quote.body}
         author={quote.author}
