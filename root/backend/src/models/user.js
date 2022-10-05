@@ -5,11 +5,6 @@ const jwt = require("jsonwebtoken");
 const Quote = require("./quote");
 
 const userSchema = new Schema({
-  name: {
-    type: String,
-    required: true,
-    trim: true,
-  },
   email: {
     type: String,
     unique: true,
