@@ -1,35 +1,28 @@
-import { useState, createContext } from "react";
+import { createContext } from "react";
 import "./App.css";
 import "./normalize.css";
 import "./tokens.css";
 import "@fontsource/marcellus";
 import "@fontsource/open-sans";
+import { useQuote } from "./hooks";
 import Layout from "./components/layout";
 import Home from "./components/home";
-import MyQuotes from "./components/my-quotes";
-import Welcome from "./components/welcome";
+// import MyQuotes from "./components/my-quotes";
+// import Welcome from "./components/welcome";
 
-export const PageContext = createContext("home");
+export const QuoteContext = createContext({});
 
 const App = () => {
-  const [authorized, setAuthorized] = useState(true);
-  const [page, setPage] = useState("home");
-
-  const selectPage = (page) => {
-    switch (page) {
-      case "home":
-        return <Home></Home>;
-      case "my-quotes":
-        return <MyQuotes></MyQuotes>;
-      default:
-        return <Home></Home>;
-    }
-  };
+  const { quote, fetchQuote } = useQuote();
 
   return (
-    <PageContext.Provider value={{ page, setPage }}>
-      {authorized ? <Layout>{selectPage(page)}</Layout> : <Welcome></Welcome>}
-    </PageContext.Provider>
+    <>
+      <QuoteContext.Provider value={{ quote, fetchQuote }}>
+        <Layout>
+          <Home quote={quote}></Home>
+        </Layout>
+      </QuoteContext.Provider>
+    </>
   );
 };
 
