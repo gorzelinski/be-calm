@@ -11,6 +11,11 @@ const quoteSchema = new Schema({
     required: true,
     trim: true,
   },
+  source: {
+    type: String,
+    required: true,
+    trim: true,
+  },
   owner: {
     type: Schema.Types.ObjectId,
     required: true,
