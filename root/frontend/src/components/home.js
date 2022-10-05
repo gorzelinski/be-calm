@@ -1,8 +1,10 @@
 import React from "react";
+import { useOutletContext } from "react-router-dom";
 import "./home.css";
 import Blockquote from "./blockquote";
 
-const Home = ({ quote }) => {
+const Home = () => {
+  const { quote } = useOutletContext();
   return (
     <div className="hero home">
       <Blockquote
