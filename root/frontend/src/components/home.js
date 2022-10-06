@@ -7,7 +7,7 @@ const Home = () => {
   const { quote, fetchQuote, addQuote } = useOutletContext();
   return (
     <div className="hero home">
-      <div className="navigation">
+      <div className="quote quote-main">
         <button
           className="button button-icon"
           onClick={() => addQuote(quote)}

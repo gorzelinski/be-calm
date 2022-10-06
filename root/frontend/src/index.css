@@ -68,9 +68,9 @@ code {
 }
 
 .paragraph {
-  font-size: var(--font-size-body);
-  line-height: var(--font-height-body);
-  margin: 0 0 var(--font-height-body) 0;
+  font-size: var(--font-size-body-small);
+  line-height: var(--font-height-body-small);
+  margin: 0 0 var(--font-height-body-small) 0;
 }
 
 .small {
@@ -137,6 +137,23 @@ ion-icon {
   justify-content: space-between;
   align-items: flex-start;
   gap: var(--spacing-10);
+}
+
+.quote {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--spacing-10);
+}
+
+.quote-main {
+  text-align: center;
+}
+
+.quote-main p {
+  margin-bottom: var(--font-height-body);
+  font-size: var(--font-size-body);
+  line-height: var(--font-height-body);
 }
 
 .input {
