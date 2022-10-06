@@ -7,7 +7,7 @@ import Header from "./header";
 
 const Layout = ({ token }) => {
   const navigate = useNavigate();
-  const { quote, fetchQuote } = useQuote();
+  const { quote, fetchQuote, addQuote } = useQuote(token);
 
   useEffect(() => {
     if (!token) {
@@ -18,7 +18,11 @@ const Layout = ({ token }) => {
   return (
     <div className="wrapper">
       <Header></Header>
-      <Navbar fetchQuote={fetchQuote}></Navbar>
+      <Navbar
+        quote={quote}
+        addQuote={addQuote}
+        fetchQuote={fetchQuote}
+      ></Navbar>
       <Outlet context={{ quote, fetchQuote }}></Outlet>
     </div>
   );

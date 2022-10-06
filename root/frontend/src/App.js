@@ -7,7 +7,9 @@ import Welcome from "./components/welcome";
 import Layout from "./components/layout";
 
 const App = () => {
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState(
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzNkOTJhMGY2NDVjNGE1NzkwM2FiNDciLCJpYXQiOjE2NjUwNTk1OTV9.ksIn2pWT-0aa-l13kF0IU-hNi8ky-o31gwRb1KvPrIU"
+  );
 
   return (
     <BrowserRouter>

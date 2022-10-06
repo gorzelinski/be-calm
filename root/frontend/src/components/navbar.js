@@ -1,18 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ fetchQuote }) => {
-  const setClass = (className, page, currentPage) =>
-    page === currentPage ? className : `${className}-outline`;
-  // const shouldDisable = page !== "home";
-
+const Navbar = ({ quote, fetchQuote, addQuote }) => {
   return (
     <nav className="navigation" aria-label="main">
       <Link to="/" className="button button-icon">
         <ion-icon name="home" size="large"></ion-icon>
         <p className="ui ui-text-small">Home</p>
       </Link>
-      <button className="button button-icon">
+      <button className="button button-icon" onClick={() => addQuote(quote)}>
         <ion-icon name="bookmark-outline" size="large"></ion-icon>
         <p className="ui ui-text-small">Bookmark</p>
       </button>
