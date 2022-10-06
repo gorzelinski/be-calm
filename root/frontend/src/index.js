@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import "./App.css";
+import "./normalize.css";
+import "./tokens.css";
+import "@fontsource/marcellus";
+import "@fontsource/open-sans";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
