@@ -3,6 +3,7 @@ const { Schema, model } = require("mongoose");
 const quoteSchema = new Schema({
   body: {
     type: String,
+    unique: true,
     required: true,
     trim: true,
   },
