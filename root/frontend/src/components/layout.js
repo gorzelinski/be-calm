@@ -7,7 +7,7 @@ import Header from "./header";
 
 const Layout = ({ token }) => {
   const navigate = useNavigate();
-  const { quote, fetchQuote, addQuote } = useQuote(token);
+  const { quote, quotes, fetchQuote, addQuote, deleteQuote } = useQuote(token);
 
   useEffect(() => {
     if (!token) {
@@ -23,7 +23,9 @@ const Layout = ({ token }) => {
         addQuote={addQuote}
         fetchQuote={fetchQuote}
       ></Navbar>
-      <Outlet context={{ token, quote, fetchQuote, addQuote }}></Outlet>
+      <Outlet
+        context={{ token, quote, quotes, fetchQuote, addQuote, deleteQuote }}
+      ></Outlet>
     </div>
   );
 };

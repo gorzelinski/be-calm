@@ -1,12 +1,10 @@
 import React from "react";
 import "./my-quotes.css";
 import Blockquote from "./blockquote";
-import { useMyQuotes } from "../hooks";
 import { useOutletContext } from "react-router-dom";
 
 const MyQuotes = () => {
-  const { token } = useOutletContext();
-  const { quotes, deleteQuote } = useMyQuotes(token);
+  const { quotes, deleteQuote } = useOutletContext();
 
   return (
     <div className="section">

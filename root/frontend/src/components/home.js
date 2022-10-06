@@ -5,6 +5,7 @@ import Blockquote from "./blockquote";
 
 const Home = () => {
   const { quote, fetchQuote, addQuote } = useOutletContext();
+
   return (
     <div className="hero home">
       <div className="quote quote-main">
