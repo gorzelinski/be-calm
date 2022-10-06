@@ -74,6 +74,7 @@ code {
 }
 
 .small {
+  display: block;
   font-size: var(--font-size-body-small);
   line-height: var(--font-height-body-small);
 }
@@ -131,9 +132,10 @@ ion-icon {
 }
 
 .navigation {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: flex-start;
   gap: var(--spacing-10);
 }
 

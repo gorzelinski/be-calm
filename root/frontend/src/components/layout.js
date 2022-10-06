@@ -23,7 +23,7 @@ const Layout = ({ token }) => {
         addQuote={addQuote}
         fetchQuote={fetchQuote}
       ></Navbar>
-      <Outlet context={{ quote, fetchQuote }}></Outlet>
+      <Outlet context={{ token, quote, fetchQuote, addQuote }}></Outlet>
     </div>
   );
 };
