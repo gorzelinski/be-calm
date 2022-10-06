@@ -4,18 +4,26 @@ import "./home.css";
 import Blockquote from "./blockquote";
 
 const Home = () => {
-  const { quote, fetchQuote, addQuote } = useOutletContext();
+  const { quote, quotes, fetchQuote, addQuote, deleteQuote } =
+    useOutletContext();
+  const duplicate = quotes.find((myQuote) => myQuote.body === quote.body);
+  console.log(duplicate);
 
   return (
     <div className="hero home">
       <div className="quote quote-main">
         <button
           className="button button-icon"
-          onClick={() => addQuote(quote)}
+          onClick={() =>
+            duplicate ? deleteQuote(duplicate._id) : addQuote(quote)
+          }
           aria-label="Bookmark quote"
           title="Bookmark quote"
         >
-          <ion-icon name="bookmark-outline" size="large"></ion-icon>
+          <ion-icon
+            name={`bookmark${duplicate ? "" : "-outline"}`}
+            size="large"
+          ></ion-icon>
         </button>
         <Blockquote
           body={quote.body}
