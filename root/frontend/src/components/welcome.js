@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const Welcome = ({ setUser, token, setToken }) => {
   const navigate = useNavigate();
+  const [action, setAction] = useState("login");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("Your daily dose of calmness.");
@@ -16,21 +17,31 @@ const Welcome = ({ setUser, token, setToken }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:4000/users/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-      });
+      const res = await fetch(
+        `http://localhost:4000/users${action === "login" ? "/login" : ""}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            password,
+          }),
+        }
+      );
       if (res.status === 200) {
         const data = await res.json();
         setEmail("");
         setPassword("");
         setMessage("User logged successfully");
+        setToken(data.token);
+        setUser(data.user);
+      } else if (res.status === 201) {
+        const data = await res.json();
+        setEmail("");
+        setPassword("");
+        setMessage("User created successfully");
         setToken(data.token);
         setUser(data.user);
       } else {
@@ -65,10 +76,16 @@ const Welcome = ({ setUser, token, setToken }) => {
           required
         ></input>
         <div className="navigation">
-          <button className="ui ui-text button button-primary center margin">
+          <button
+            className="ui ui-text button button-primary center margin"
+            onClick={() => setAction("login")}
+          >
             Login
           </button>
-          <button className="ui ui-text button button-outline center margin">
+          <button
+            className="ui ui-text button button-outline center margin"
+            onClick={() => setAction("sign-up")}
+          >
             Sign up
           </button>
         </div>
