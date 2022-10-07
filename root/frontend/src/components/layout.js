@@ -5,7 +5,7 @@ import "./navbar.css";
 import Navbar from "./navbar";
 import Header from "./header";
 
-const Layout = ({ token }) => {
+const Layout = ({ user, token }) => {
   const navigate = useNavigate();
   const { quote, quotes, fetchQuote, addQuote, deleteQuote } = useQuote(token);
 
@@ -17,14 +17,21 @@ const Layout = ({ token }) => {
 
   return (
     <div className="wrapper">
-      <Header></Header>
+      <Header user={user}></Header>
       <Navbar
         quote={quote}
         addQuote={addQuote}
         fetchQuote={fetchQuote}
       ></Navbar>
       <Outlet
-        context={{ token, quote, quotes, fetchQuote, addQuote, deleteQuote }}
+        context={{
+          token,
+          quote,
+          quotes,
+          fetchQuote,
+          addQuote,
+          deleteQuote,
+        }}
       ></Outlet>
     </div>
   );

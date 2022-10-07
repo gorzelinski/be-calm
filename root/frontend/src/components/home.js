@@ -7,7 +7,6 @@ const Home = () => {
   const { quote, quotes, fetchQuote, addQuote, deleteQuote } =
     useOutletContext();
   const duplicate = quotes.find((myQuote) => myQuote.body === quote.body);
-  console.log(duplicate);
 
   return (
     <div className="hero home">

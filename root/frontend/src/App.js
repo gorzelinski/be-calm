@@ -7,18 +7,23 @@ import Welcome from "./components/welcome";
 import Layout from "./components/layout";
 
 const App = () => {
-  const [token, setToken] = useState(
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzNkOTJhMGY2NDVjNGE1NzkwM2FiNDciLCJpYXQiOjE2NjUwNTk1OTV9.ksIn2pWT-0aa-l13kF0IU-hNi8ky-o31gwRb1KvPrIU"
-  );
+  const [token, setToken] = useState("");
+  const [user, setUser] = useState("");
 
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path="/login/"
-          element={<Welcome token={token} setToken={setToken}></Welcome>}
+          element={
+            <Welcome
+              setUser={setUser}
+              token={token}
+              setToken={setToken}
+            ></Welcome>
+          }
         ></Route>
-        <Route path="/" element={<Layout token={token}></Layout>}>
+        <Route path="/" element={<Layout user={user} token={token}></Layout>}>
           <Route index element={<Home></Home>}></Route>
           <Route path="/my-quotes/" element={<MyQuotes></MyQuotes>}></Route>
         </Route>

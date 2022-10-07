@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Welcome = ({ token, setToken }) => {
+const Welcome = ({ setUser, token, setToken }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,6 +32,7 @@ const Welcome = ({ token, setToken }) => {
         setPassword("");
         setMessage("User logged successfully");
         setToken(data.token);
+        setUser(data.user);
       } else {
         setMessage("Some error occurred during login.");
       }

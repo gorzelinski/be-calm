@@ -31,7 +31,6 @@ export const useQuote = (token = "") => {
       .then((result) => result.json())
       .then((data) => {
         setQuotes(data);
-        console.log(data);
       })
       .catch((e) => {
         console.log("Error occurred while fetching quotes", e);
