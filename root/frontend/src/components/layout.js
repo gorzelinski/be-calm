@@ -8,7 +8,7 @@ import Header from "./header";
 const Layout = ({ user, token, setToken }) => {
   const navigate = useNavigate();
   const { quote, quotes, fetchQuote, addQuote, deleteQuote } = useQuote(token);
-  const { logoutUser, logoutAllUser } = useUser(token, setToken);
+  const { logoutUser, logoutAllUser, deleteUser } = useUser(token, setToken);
 
   useEffect(() => {
     if (!token) {
@@ -22,6 +22,7 @@ const Layout = ({ user, token, setToken }) => {
         user={user}
         logoutUser={logoutUser}
         logoutAllUser={logoutAllUser}
+        deleteUser={deleteUser}
         setToken={setToken}
       ></Header>
       <Navbar

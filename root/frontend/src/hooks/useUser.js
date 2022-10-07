@@ -13,7 +13,7 @@ export const useUser = (token, setToken) => {
         setToken("");
       })
       .catch((e) => {
-        console.log("Error occurred while fetching quotes", e);
+        console.log("Error occurred while logging out", e);
       });
   }, [token, setToken]);
 
@@ -29,9 +29,25 @@ export const useUser = (token, setToken) => {
         setToken("");
       })
       .catch((e) => {
-        console.log("Error occurred while fetching quotes", e);
+        console.log("Error occurred while logging out", e);
       });
   }, [token, setToken]);
 
-  return { logoutUser, logoutAllUser };
+  const deleteUser = useCallback(() => {
+    fetch("http://localhost:4000/users/me", {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    })
+      .then(() => {
+        setToken("");
+      })
+      .catch((e) => {
+        console.log("Error occurred while deleting user", e);
+      });
+  }, [token, setToken]);
+
+  return { logoutUser, logoutAllUser, deleteUser };
 };

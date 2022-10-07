@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./header.css";
 
-const Header = ({ user = {}, logoutUser, logoutAllUser }) => {
+const Header = ({ user = {}, logoutUser, logoutAllUser, deleteUser }) => {
   const letter = user.email?.substring(0, 1).toUpperCase();
   const [menu, setMenu] = useState(false);
 
@@ -28,6 +28,12 @@ const Header = ({ user = {}, logoutUser, logoutAllUser }) => {
             onClick={() => logoutAllUser()}
           >
             Logout from all devices
+          </button>
+          <button
+            className="button button-text ui ui-text-small"
+            onClick={() => deleteUser()}
+          >
+            Delete account
           </button>
         </div>
       ) : null}
