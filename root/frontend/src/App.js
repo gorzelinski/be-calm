@@ -23,7 +23,12 @@ const App = () => {
             ></Welcome>
           }
         ></Route>
-        <Route path="/" element={<Layout user={user} token={token}></Layout>}>
+        <Route
+          path="/"
+          element={
+            <Layout user={user} token={token} setToken={setToken}></Layout>
+          }
+        >
           <Route index element={<Home></Home>}></Route>
           <Route path="/my-quotes/" element={<MyQuotes></MyQuotes>}></Route>
         </Route>

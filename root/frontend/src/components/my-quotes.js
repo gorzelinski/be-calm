@@ -9,7 +9,7 @@ const MyQuotes = () => {
   return (
     <div className="section">
       <h2 className="headings heading-1 margin-bottom-big">My quotes</h2>
-      {quotes.map((quote, index, array) => (
+      {quotes.map((quote) => (
         <div className="quote" key={quote._id}>
           <button
             className="button button-icon"

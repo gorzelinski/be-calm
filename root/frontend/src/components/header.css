@@ -1,4 +1,5 @@
 header {
+  position: relative;
   z-index: 100;
   width: 100%;
   position: fixed;
@@ -7,4 +8,15 @@ header {
   justify-content: space-between;
   padding: var(--spacing-10);
   background-color: var(--color-white);
+}
+
+.modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  right: var(--spacing-10);
+  top: calc(var(--header-height) + var(--spacing-10));
+  padding: var(--spacing-10);
+  background-color: var(--color-surface);
 }

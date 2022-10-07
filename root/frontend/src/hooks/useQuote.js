@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 
-export const useQuote = (token = "") => {
+export const useQuote = (token) => {
   const [quote, setQuote] = useState({});
   const [quotes, setQuotes] = useState([]);
 

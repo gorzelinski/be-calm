@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import { useQuote } from "../hooks";
+import { useUser, useQuote } from "../hooks";
 import "./navbar.css";
 import Navbar from "./navbar";
 import Header from "./header";
 
-const Layout = ({ user, token }) => {
+const Layout = ({ user, token, setToken }) => {
   const navigate = useNavigate();
   const { quote, quotes, fetchQuote, addQuote, deleteQuote } = useQuote(token);
+  const { logoutUser, logoutAllUser } = useUser(token, setToken);
 
   useEffect(() => {
     if (!token) {
@@ -17,7 +18,12 @@ const Layout = ({ user, token }) => {
 
   return (
     <div className="wrapper">
-      <Header user={user}></Header>
+      <Header
+        user={user}
+        logoutUser={logoutUser}
+        logoutAllUser={logoutAllUser}
+        setToken={setToken}
+      ></Header>
       <Navbar
         quote={quote}
         addQuote={addQuote}

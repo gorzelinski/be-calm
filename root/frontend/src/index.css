@@ -113,6 +113,12 @@ code {
   color: var(--color-primary);
 }
 
+.button-text {
+  border: 0;
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
 ion-icon {
   margin: 0;
   padding: 0;
