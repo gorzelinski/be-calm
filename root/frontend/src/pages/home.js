@@ -7,16 +7,13 @@ import sections from "../components/sections.module.css";
 const Home = () => {
   const { quote, quotes, fetchQuote, addQuote, deleteQuote } =
     useOutletContext();
-  const { body, author, source } = quote;
   const duplicate = quotes.find((myQuote) => myQuote.body === quote.body);
 
   return (
     <div className={`${sections.hero} ${sections.home}`}>
       <Quote
         featured={true}
-        body={body}
-        author={author}
-        source={source}
+        quote={quote}
         duplicate={duplicate}
         fetchQuote={fetchQuote}
         addQuote={addQuote}

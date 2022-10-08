@@ -1,26 +1,25 @@
 import React from "react";
 
 import typography from "./typography.module.css";
-import quote from "./quote.module.css";
+import blockquote from "./blockquote.module.css";
 import button from "./button.module.css";
 
 const Quote = ({
   featured = false,
-  id = "",
-  body = "",
-  author = "",
-  source = "",
-  duplicate = {},
+  quote,
+  duplicate,
   fetchQuote,
   addQuote,
   deleteQuote,
 }) => {
+  const { body, author, source } = quote;
+
   return featured ? (
-    <div className={`${quote.base} ${quote.featured}`}>
+    <div className={`${blockquote.base} ${blockquote.featured}`}>
       <button
         className={`${button.base} ${button.icon}`}
         onClick={() =>
-          duplicate ? deleteQuote(duplicate._id) : addQuote(quote)
+          duplicate ? deleteQuote(duplicate?._id) : addQuote(quote)
         }
         aria-label="Bookmark quote"
         title="Bookmark quote"
@@ -30,7 +29,7 @@ const Quote = ({
           size="large"
         ></ion-icon>
       </button>
-      <blockquote className={quote.blockquote}>
+      <blockquote className={blockquote.blockquote}>
         <p className={`${typography.body} ${typography.paragraph}`}>{body}</p>
         <cite className={`${typography.body} ${typography.small}`}>
           &mdash;{author}
@@ -49,7 +48,7 @@ const Quote = ({
       </button>
     </div>
   ) : (
-    <div className={quote.base}>
+    <div className={blockquote.base}>
       <button
         className={`${button.base} ${button.icon}`}
         aria-label="Remove quote"
@@ -58,7 +57,7 @@ const Quote = ({
       >
         <ion-icon name="bookmark" size="large"></ion-icon>
       </button>
-      <blockquote className={quote.blockquote}>
+      <blockquote className={blockquote.blockquote}>
         <p className={`${typography.body} ${typography.paragraph}`}>{body}</p>
         <cite className={`${typography.body} ${typography.small}`}>
           &mdash;{author}

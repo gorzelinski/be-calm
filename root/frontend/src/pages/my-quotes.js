@@ -17,14 +17,7 @@ const MyQuotes = () => {
         My quotes
       </h2>
       {quotes.map((quote) => (
-        <Quote
-          key={quote._id}
-          id={quote._id}
-          body={quote.body}
-          author={quote.author}
-          source={quote.source}
-          deleteQuote={deleteQuote}
-        ></Quote>
+        <Quote key={quote._id} quote={quote} deleteQuote={deleteQuote}></Quote>
       ))}
     </div>
   );
