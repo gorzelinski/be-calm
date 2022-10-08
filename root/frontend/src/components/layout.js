@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
+
 import { useUser, useQuote } from "../hooks";
-import "./navbar.css";
 import Navbar from "./navbar";
 import Header from "./header";
 

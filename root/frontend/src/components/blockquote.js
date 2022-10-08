@@ -1,5 +1,4 @@
 import React from "react";
-import "./blockquote.css";
 
 const Blockquote = ({ body, author, source }) => {
   return (

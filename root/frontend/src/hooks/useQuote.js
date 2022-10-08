@@ -30,7 +30,7 @@ export const useQuote = (token) => {
     })
       .then((result) => result.json())
       .then((data) => {
-        setQuotes(data.reverse());
+        setQuotes(data?.reverse());
       })
       .catch((e) => {
         console.log("Error occurred while fetching quotes", e);

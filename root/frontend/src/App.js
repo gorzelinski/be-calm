@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Home from "./components/home";
-import MyQuotes from "./components/my-quotes";
-import Welcome from "./components/welcome";
+import Home from "./pages/home";
+import MyQuotes from "./pages/my-quotes";
+import Welcome from "./pages/welcome";
 import Layout from "./components/layout";
 
 const App = () => {

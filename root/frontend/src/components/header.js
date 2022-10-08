@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./header.css";
 
 const Header = ({ user = {}, logoutUser, logoutAllUser, deleteUser }) => {
   const letter = user.email?.substring(0, 1).toUpperCase();

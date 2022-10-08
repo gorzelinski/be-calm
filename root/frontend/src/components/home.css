@@ -1,4 +1,0 @@
-.home {
-  padding: var(--spacing-30) 0;
-  min-height: calc(100vh - var(--header-height) - var(--navbar-height));
-}

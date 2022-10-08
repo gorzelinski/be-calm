@@ -1,7 +1,7 @@
 import React from "react";
-import "./my-quotes.css";
-import Blockquote from "./blockquote";
 import { useOutletContext } from "react-router-dom";
+
+import Blockquote from "../components/blockquote";
 
 const MyQuotes = () => {
   const { quotes, deleteQuote } = useOutletContext();
