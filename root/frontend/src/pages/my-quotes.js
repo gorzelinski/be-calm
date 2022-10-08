@@ -1,30 +1,30 @@
 import React from "react";
 import { useOutletContext } from "react-router-dom";
 
-import Blockquote from "../components/blockquote";
+import utils from "../components/utils.module.css";
+import sections from "../components/sections.module.css";
+import typography from "../components/typography.module.css";
+import Quote from "../components/quote";
 
 const MyQuotes = () => {
   const { quotes, deleteQuote } = useOutletContext();
 
   return (
-    <div className="section">
-      <h2 className="headings heading-1 margin-bottom-big">My quotes</h2>
+    <div className={sections.section}>
+      <h2
+        className={`${typography.headings} ${typography["heading-1"]} ${utils["margin-bottom-big"]}`}
+      >
+        My quotes
+      </h2>
       {quotes.map((quote) => (
-        <div className="quote" key={quote._id}>
-          <button
-            className="button button-icon"
-            aria-label="Remove quote"
-            title="Remove quote"
-            onClick={() => deleteQuote(quote._id)}
-          >
-            <ion-icon name="bookmark" size="large"></ion-icon>
-          </button>
-          <Blockquote
-            body={quote.body}
-            author={quote.author}
-            source={quote.source}
-          ></Blockquote>
-        </div>
+        <Quote
+          key={quote._id}
+          id={quote._id}
+          body={quote.body}
+          author={quote.author}
+          source={quote.source}
+          deleteQuote={deleteQuote}
+        ></Quote>
       ))}
     </div>
   );

@@ -1,0 +1,51 @@
+.base {
+  border-radius: var(--spacing-30);
+  padding: var(--spacing-10) var(--spacing-20);
+}
+
+.primary {
+  border: 0;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.outline {
+  background-color: transparent;
+  border: var(--spacing-00) solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.text {
+  border: 0;
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  color: var(--color-primary-dark);
+}
+
+ion-icon {
+  margin: 0;
+  padding: 0;
+}
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--spacing-50);
+  height: var(--spacing-50);
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}

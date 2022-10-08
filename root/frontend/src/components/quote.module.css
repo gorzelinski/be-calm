@@ -1,0 +1,21 @@
+.base {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--spacing-10);
+}
+
+.featured {
+  text-align: center;
+}
+
+.featured p {
+  margin-bottom: var(--font-height-body);
+  font-size: var(--font-size-body);
+  line-height: var(--font-height-body);
+}
+
+.blockquote {
+  margin: 0 0 var(--spacing-50) 0;
+  font-style: normal;
+}

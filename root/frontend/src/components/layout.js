@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 
+import sections from "./sections.module.css";
 import { useUser, useQuote } from "../hooks";
 import Navbar from "./navbar";
 import Header from "./header";
@@ -17,7 +18,7 @@ const Layout = ({ user, token, setToken }) => {
   }, [token, navigate]);
 
   return (
-    <div className="wrapper">
+    <div className={sections.wrapper}>
       <Header
         user={user}
         logoutUser={logoutUser}

@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import typography from "../components/typography.module.css";
+import sections from "../components/sections.module.css";
+import form from "../components/form.module.css";
+import button from "../components/button.module.css";
+import navigation from "../components/navigation.module.css";
+
 const Welcome = ({ setUser, token, setToken }) => {
   const navigate = useNavigate();
   const [action, setAction] = useState("login");
@@ -53,12 +59,16 @@ const Welcome = ({ setUser, token, setToken }) => {
   };
 
   return (
-    <div className="wrapper hero">
-      <h1 className="headings heading-1">Be calm</h1>
-      <p className="body paragraph-small">{message}</p>
+    <div className={`${sections.wrapper} ${sections.hero}`}>
+      <h1 className={`${typography.headings} ${typography["heading-1"]}`}>
+        Be calm
+      </h1>
+      <p className={`${typography.body} ${typography["paragraph-small"]}`}>
+        {message}
+      </p>
       <form onSubmit={handleSubmit}>
         <input
-          className="ui ui-text input margin"
+          className={`${typography.ui} ${typography["ui-text"]} ${form.input} margin-bottom`}
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -67,7 +77,7 @@ const Welcome = ({ setUser, token, setToken }) => {
           required
         ></input>
         <input
-          className="ui ui-text input margin"
+          className={`${typography.ui} ${typography["ui-text"]} ${form.input} margin-bottom`}
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           onClick={() => setMessage("Your daily dose of calmness.")}
@@ -75,15 +85,15 @@ const Welcome = ({ setUser, token, setToken }) => {
           placeholder="Password"
           required
         ></input>
-        <div className="navigation">
+        <div className={navigation.nav}>
           <button
-            className="ui ui-text button button-primary center margin"
+            className={`${typography.ui} ${typography["ui-text"]} ${button.base} ${button.primary} center`}
             onClick={() => setAction("login")}
           >
             Login
           </button>
           <button
-            className="ui ui-text button button-outline center margin"
+            className={`${typography.ui} ${typography["ui-text"]} ${button.base} ${button.outline} center`}
             onClick={() => setAction("sign-up")}
           >
             Sign up
