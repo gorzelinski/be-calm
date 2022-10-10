@@ -26,11 +26,6 @@ const Layout = ({ user, token, setToken }) => {
         deleteUser={deleteUser}
         setToken={setToken}
       ></Header>
-      <Navbar
-        quote={quote}
-        addQuote={addQuote}
-        fetchQuote={fetchQuote}
-      ></Navbar>
       <Outlet
         context={{
           token,
@@ -41,6 +36,11 @@ const Layout = ({ user, token, setToken }) => {
           deleteQuote,
         }}
       ></Outlet>
+      <Navbar
+        quote={quote}
+        addQuote={addQuote}
+        fetchQuote={fetchQuote}
+      ></Navbar>
     </div>
   );
 };

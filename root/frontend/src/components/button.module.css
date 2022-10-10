@@ -1,6 +1,7 @@
 .base {
   border-radius: var(--spacing-30);
   padding: var(--spacing-10) var(--spacing-20);
+  text-decoration: none;
 }
 
 .primary {

@@ -66,7 +66,7 @@ const Welcome = ({ setUser, token, setToken }) => {
       <p className={`${typography.body} ${typography["paragraph-small"]}`}>
         {message}
       </p>
-      <form onSubmit={handleSubmit}>
+      <form className={form.container} onSubmit={handleSubmit}>
         <input
           className={`${typography.ui} ${typography["ui-text"]} ${form.input} margin-bottom`}
           type="email"
