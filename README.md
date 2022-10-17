@@ -2,7 +2,9 @@
 
 Your daily dose of calmness.
 
-A simple mobile web app - allows you to discover and manage stoic quotes.
+<img src="./be-calm.png" width="390">
+
+A simple mobile web app. Sign up, discover and manage stoic quotes.
 
 ## Built with
 
